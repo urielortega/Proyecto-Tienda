@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('status')->default('unpaid'); # Por defecto, una orden estará marcada como 'No pagada'
             $table->string('payment_type');
-            $table->string('payment_proof');
-            $table->integer('rating')->unsigned(); # La calificación no debe tener signo
+            $table->string('payment_proof')->nullable();
+            $table->integer('rating')->unsigned()->nullable(); # La calificación no debe tener signo
             $table->date('placed_at'); # Fecha en la que se realizó la orden
-            $table->float('total_amount')->unsigned(); # El importe no debe tener signo
+            $table->float('amount')->unsigned(); # El importe no debe tener signo
             $table->timestamps(); # Crea dos atributos (con fecha y hora) sobre el momento de creación y de actualización
         });
     }

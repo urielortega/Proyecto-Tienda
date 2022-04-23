@@ -16,7 +16,7 @@ class Payout extends Model
      */
     protected $fillable = [
         'status',
-        'total_amount',
+        'amount',
         'delivered_at',
     ];
 }

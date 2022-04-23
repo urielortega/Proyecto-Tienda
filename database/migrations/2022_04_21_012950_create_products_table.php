@@ -20,8 +20,8 @@ return new class extends Migration
             $table->float('price')->unsigned(); # El precio no debe tener signo
             $table->integer('stock')->unsigned(); # La existencia no debe tener signo
             $table->string('status')->default('unavailable'); # Por defecto, al inicio un producto está 'No disponible'
-            $table->date('published_at');
-            $table->float('handling_percentage')->unsigned();
+            $table->date('published_at')->nullable();
+            $table->float('handling_percentage')->unsigned()->nullable();
             $table->timestamps(); # Crea dos atributos (con fecha y hora) sobre el momento de creación y de actualización
         });
     }

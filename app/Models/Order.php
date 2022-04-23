@@ -20,6 +20,6 @@ class Order extends Model
         'payment_proof',
         'rating',
         'placed_at',
-        'total_amount',
+        'amount',
     ];
 }

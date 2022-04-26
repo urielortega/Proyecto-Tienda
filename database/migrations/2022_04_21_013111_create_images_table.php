@@ -15,8 +15,13 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
+
             $table->string('name');
+            $table->bigInteger('product_id')->unsigned();
+            
             $table->timestamps();
+
+            $table->foreign('product_id')->references('id')->on('products'); # La FK 'product_id' hace referencia al id de products
         });
     }
 

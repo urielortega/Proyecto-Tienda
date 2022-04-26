@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -22,6 +23,7 @@ return new class extends Migration
             $table->date('registered_at');
             $table->string('role')->default('buyer'); # Por defecto, al crear un usuario, se tendrá el rol de 'Cliente comprador'
             $table->rememberToken();
+            
             $table->timestamps(); # Crea dos atributos (con fecha y hora) sobre el momento de creación y de actualización
         });
     }

@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Product;
+use App\Models\User;
 
 class Question extends Model
 {
@@ -17,5 +19,14 @@ class Question extends Model
     protected $fillable = [
         'description',
         'answer',
+        'product_id',
     ];
+
+    public function product() {
+        return $this->belongsTo(Product::class);
+    }
+
+    public function users() {
+        return $this->belongsToMany(User::class);
+    }
 }

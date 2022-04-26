@@ -24,6 +24,7 @@ class ProductFactory extends Factory
             'status' => $this->faker->randomElement(['available', 'unavailable']),
             'published_at' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
             'handling_percentage' => $this->faker->randomFloat($maxDecimals = 2, $min = 0, $max = 1),
+            'reason'=> $this->faker->paragraph(1),
         ];
     }
 }

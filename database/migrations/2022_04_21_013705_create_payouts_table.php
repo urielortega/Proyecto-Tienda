@@ -15,9 +15,13 @@ return new class extends Migration
     {
         Schema::create('payouts', function (Blueprint $table) {
             $table->id();
+
             $table->string('status')->default('undelivered'); # Por defecto, un pago estará marcado como 'No entregado'
             $table->float('amount')->unsigned(); # El importe no debe tener signo
             $table->date('delivered_at')->nullable(); # Fecha en la que se entregó el pago
+
+            $table->morphs('payoutable');
+
             $table->timestamps(); # Crea dos atributos (con fecha y hora) sobre el momento de creación y de actualización
         });
     }

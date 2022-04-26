@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Image;
+use App\Models\Question;
+use App\Models\Order;
 
 class Product extends Model
 {
@@ -22,5 +25,22 @@ class Product extends Model
         'status',
         'published_at',
         'handling_percentage',
+        'reason'
     ];
+
+    public function images() {
+        return $this->hasMany(Image::class);
+    }
+
+    public function questions() {
+        return $this->hasMany(Question::class);
+    }
+
+    public function productable() {
+        return $this->morphTo();
+    }
+
+    public function orders() {
+        return $this->morphToMany(Order::class, 'orderable')->withPivot('quantity');
+    }
 }

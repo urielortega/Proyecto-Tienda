@@ -27,6 +27,6 @@ class Payout extends Model
     }
 
     public function orders() {
-        return $this->morphToMany(Order::class, 'orderable'); # ->withPivot('quantity'); # ¿?
+        return $this->morphToMany(Order::class, 'orderable'); # ->withPivot('quantity'); # Un Payout tiene varias Orders relacionadas, pero sin una cantidad en específico.
     }
 }

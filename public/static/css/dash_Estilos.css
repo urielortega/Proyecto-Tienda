@@ -1,0 +1,70 @@
+.cardBox{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3,2fr);
+    grid-gap: 30px;
+}
+
+.cardBox .tarjeta{
+    position: relative;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 7px 25px rgb(204, 204, 204);
+}
+
+.cardBox .tarjeta .numero{
+    position: relative;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: green;
+}
+
+.cardBox .tarjeta .nombre{
+    color: black;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.cardBox .tarjeta .Tarjeta_iconos{
+    font-size: 1.5em;
+    color: #000;
+}
+
+.Detalle{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr,1fr;
+    grid-gap: 30px;
+    margin-top: 10px;
+}
+
+.Detalle .Ventas_recientes{
+    position: relative;
+    display: grid;
+    min-height: 350px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 7px 25px rgb(160, 160, 160);
+    border-radius: 10px;
+}
+.Detalle .Ventas_recientes table tr{
+    color: #000;
+    border-bottom: 1px solid rgba(0,0,0,1);
+}
+
+.Detalle .Ventas_recientes table tr td{
+    padding: 10px;
+}
+
+
+.Detalle table thead td{
+    font-weight: 600;
+}
+

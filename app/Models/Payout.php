@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Question;
+
 class Payout extends Model
 {
     use HasFactory;
@@ -16,7 +18,15 @@ class Payout extends Model
      */
     protected $fillable = [
         'status',
-        'total_amount',
+        'amount',
         'delivered_at',
     ];
+
+    public function payoutable() {
+        return $this->morphTo();
+    }
+
+    public function orders() {
+        return $this->morphToMany(Order::class, 'orderable'); # ->withPivot('quantity'); # Un Payout tiene varias Orders relacionadas, pero sin una cantidad en específico.
+    }
 }
